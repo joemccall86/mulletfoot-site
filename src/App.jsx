@@ -153,9 +153,12 @@ const App = () => {
                     {item.reward}
                   </div>
                 </div>
-                <button className="w-full md:w-auto px-6 py-3 bg-white text-black font-black rounded-xl hover:bg-gray-200 transition-colors uppercase text-sm">
-                  Get Directions
-                </button>
+                 <button
+                   className="w-full md:w-auto px-6 py-3 bg-white text-black font-black rounded-xl hover:bg-gray-200 transition-colors uppercase text-sm cursor-pointer"
+                   onClick={() => window.open(`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(item.address)}`, '_blank')}
+                 >
+                   Get Directions
+                 </button>
               </div>
             ))}
           </div>
