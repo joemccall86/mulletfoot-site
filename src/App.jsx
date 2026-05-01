@@ -214,7 +214,7 @@ const App = () => {
       {/* Races Section */}
       {activeTab === 'races' && (
         <section className="max-w-4xl mx-auto px-4 py-16">
-          <h2 className="text-3xl font-black mb-8 uppercase italic tracking-tighter">Local Race Calendar</h2>
+          <h2 className="text-3xl font-black mb-8 uppercase italic tracking-tighter">Races on Tap</h2>
           <div className="bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800">
             {races.map((race, i) => (
               <div key={i} className="p-6 border-b border-zinc-800 last:border-0 flex justify-between items-center hover:bg-zinc-800/30 transition-colors">
