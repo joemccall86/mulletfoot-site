@@ -46,15 +46,16 @@ const App = () => {
   ];
 
   const c25kProgram = [
-    { week: 1, focus: "Intro to Running", plan: "Run 1 min, Walk 1.5 mins (repeat 8x)" },
-    { week: 2, focus: "Building Stamina", plan: "Run 1.5 mins, Walk 2 mins (repeat 6x)" },
-    { week: 3, focus: "The 3 Minute Mark", plan: "Run 1.5 mins, Walk 1.5 mins, Run 3 mins, Walk 3 mins (repeat 2x)" },
-    { week: 4, focus: "Pushing Forward", plan: "Run 3 mins, Walk 1.5 mins, Run 5 mins, Walk 2.5 mins (repeat 2x)" },
-    { week: 5, focus: "Transition Week", plan: "Day 3 is a solid 20 min run!" },
-    { week: 6, focus: "No More Walking", plan: "Run 25 mins continuous by end of week" },
-    { week: 7, focus: "Consistency", plan: "Run 25 mins (3 times this week)" },
-    { week: 8, focus: "Peak Training", plan: "Run 28 mins (3 times this week)" },
-    { week: 9, focus: "The 5K Goal", plan: "Run 30 mins (3.1 miles) - You did it!" }
+    { week: 1, mon: "Rest", tue: "Run 2 min, Walk 4 min (x5)", wed: "Rest", thu: "Run 2 min, Walk 4 min (x5)", fri: "Rest", sat: "Run 2 min, Walk 4 min (x5)", sun: "30 min Walk" },
+    { week: 2, mon: "Rest", tue: "Run 3 min, Walk 3 min (x5)", wed: "Rest", thu: "Run 3 min, Walk 3 min (x5)", fri: "Rest", sat: "Run 3 min, Walk 3 min (x5)", sun: "30 min Walk" },
+    { week: 3, mon: "Rest", tue: "Run 5 min, Walk 2.5 min (x4)", wed: "Rest", thu: "Run 5 min, Walk 2.5 min (x4)", fri: "Rest", sat: "Run 5 min, Walk 2.5 min (x4)", sun: "30 min Walk" },
+    { week: 4, mon: "Rest", tue: "Run 7 min, Walk 2 min (x3)", wed: "Rest", thu: "Run 7 min, Walk 2 min (x3)", fri: "Rest", sat: "Run 7 min, Walk 2 min (x3)", sun: "30 min Walk" },
+    { week: 5, mon: "Rest", tue: "Run 8 min, Walk 2 min (x3)", wed: "Rest", thu: "Run 8 min, Walk 2 min (x3)", fri: "Rest", sat: "Run 8 min, Walk 2 min (x3)", sun: "30 min Walk" },
+    { week: 6, mon: "Rest", tue: "Run 9 min, Walk 2 min (x3)", wed: "Rest", thu: "Run 9 min, Walk 2 min (x3)", fri: "Rest", sat: "Run 9 min, Walk 2 min (x3)", sun: "30 min Walk" },
+    { week: 7, mon: "Rest", tue: "Run 11 min, Walk 1.5 min (x3)", wed: "Rest", thu: "Run 11 min, Walk 1.5 min (x3)", fri: "Rest", sat: "Run 11 min, Walk 1.5 min (x3)", sun: "30 min Walk" },
+    { week: 8, mon: "Rest", tue: "Run 13 min, Walk 2 min (x2)", wed: "Rest", thu: "Run 13 min, Walk 2 min (x2)", fri: "Rest", sat: "Run 13 min, Walk 2 min (x2)", sun: "30 min Walk" },
+    { week: 9, mon: "Rest", tue: "Run 15 min, Walk 1 min (x2)", wed: "Rest", thu: "Run 15 min, Walk 1 min (x2)", fri: "Rest", sat: "Run 15 min, Walk 1 min (x2)", sun: "30 min Walk" },
+    { week: 10, mon: "Rest", tue: "Run 20 min", wed: "Rest", thu: "Run 25 min", fri: "Rest", sat: "5K RACE", sun: "30 min Walk" }
   ];
 
   return (
@@ -163,32 +164,46 @@ const App = () => {
 
       {/* Training Program Section */}
       {activeTab === 'training' && (
-        <section className="max-w-4xl mx-auto px-4 py-16">
+        <section className="max-w-6xl mx-auto px-4 py-16">
           <div className="mb-12">
             <h2 className="text-4xl font-black mb-4 uppercase tracking-tighter italic">Couch to 5K</h2>
-            <p className="text-gray-400">A beginner-friendly 9-week program designed to get you from the sofa to the Sanford finish line.</p>
+            <p className="text-gray-400 mb-2">A beginner-friendly 10-week program designed to get you from the sofa to the Sanford finish line.</p>
+            <a href="https://www.runnersworld.com/beginner/a40267826/couch-to-5k-runners-program/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sm font-bold hover:underline" style={{ color: colors.neonBlue }}>
+              Source: Runner's World <ExternalLink className="w-3 h-3" />
+            </a>
           </div>
-          <div className="grid gap-4">
-            {c25kProgram.map((item, i) => (
-              <div key={i} className="group p-6 rounded-2xl bg-zinc-900 border border-zinc-800 hover:bg-zinc-800/50 transition-all">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full border-2 flex items-center justify-center font-black text-lg" 
-                         style={{ borderColor: i < 3 ? colors.neonGreen : i < 6 ? colors.neonBlue : colors.neonPink }}>
-                      {item.week}
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-lg">{item.focus}</h4>
-                      <p className="text-gray-400 text-sm">{item.plan}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-2 text-zinc-600 group-hover:text-zinc-400">
-                    <CheckCircle className="w-5 h-5" />
-                    <span className="text-xs uppercase font-bold">Week {item.week}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
+          <div className="overflow-x-auto rounded-2xl border border-zinc-800">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="bg-zinc-900 text-xs uppercase tracking-widest text-gray-500">
+                  <th className="p-4 text-left font-black">Week</th>
+                  <th className="p-4 text-left font-bold">Mon</th>
+                  <th className="p-4 text-left font-bold">Tue</th>
+                  <th className="p-4 text-left font-bold">Wed</th>
+                  <th className="p-4 text-left font-bold">Thu</th>
+                  <th className="p-4 text-left font-bold">Fri</th>
+                  <th className="p-4 text-left font-bold">Sat</th>
+                  <th className="p-4 text-left font-bold">Sun</th>
+                </tr>
+              </thead>
+              <tbody>
+                {c25kProgram.map((item, i) => {
+                  const isRaceWeek = item.week === 10;
+                  return (
+                    <tr key={i} className="border-t border-zinc-800 hover:bg-zinc-800/50 transition-colors" style={isRaceWeek ? { backgroundColor: '#39FF140D' } : i % 2 === 0 ? {} : { backgroundColor: '#ffffff05' }}>
+                      <td className="p-4 font-black text-lg" style={{ color: isRaceWeek ? colors.neonGreen : i < 3 ? colors.neonGreen : i < 6 ? colors.neonBlue : colors.neonPink }}>{item.week}</td>
+                      <td className="p-4 text-gray-400">{item.mon}</td>
+                      <td className="p-4 text-gray-300">{item.tue}</td>
+                      <td className="p-4 text-gray-400">{item.wed}</td>
+                      <td className="p-4 text-gray-300">{item.thu}</td>
+                      <td className="p-4 text-gray-400">{item.fri}</td>
+                      <td className="p-4 font-bold" style={{ color: isRaceWeek ? colors.neonGreen : '#D1D5DB' }}>{item.sat}</td>
+                      <td className="p-4 text-gray-400">{item.sun}</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
           </div>
         </section>
       )}
