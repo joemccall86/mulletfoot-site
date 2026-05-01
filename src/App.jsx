@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import logo from './assets/logo.svg';
+import logoNoText from './assets/logo_no_text.svg';
 import { Calendar, MapPin, Beer, Coffee, Users, Instagram, Facebook, Twitter, CheckCircle, Dog, Baby, Footprints, ExternalLink, ChevronRight } from 'lucide-react';
 
 const App = () => {
@@ -59,15 +61,13 @@ const App = () => {
     <div className="min-h-screen text-gray-100 font-sans" style={{ backgroundColor: colors.darkBg }}>
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-black/80 backdrop-blur-md border-b border-gray-800">
-        <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-             <div className="w-10 h-10 rounded-full flex items-center justify-center border-2" style={{ borderColor: colors.neonPink }}>
-                <span className="font-bold text-xl" style={{ color: colors.neonPink }}>M</span>
-             </div>
-             <span className="font-black text-lg tracking-tighter uppercase hidden sm:block">
-               Mullet <span style={{ color: colors.neonGreen }}>Foot</span>
-             </span>
-          </div>
+        <div className="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between">
+           <div className="flex items-center gap-2">
+              <img src={logoNoText} alt="Mullet Foot" className="w-12 h-12 md:w-14 md:h-14" />
+              <span className="font-black text-lg tracking-tighter uppercase hidden sm:block">
+                Mullet <span style={{ color: colors.neonGreen }}>Foot</span>
+              </span>
+           </div>
           <div className="flex gap-4 md:gap-8 text-sm font-bold uppercase tracking-widest">
             {['home', 'schedule', 'training', 'races'].map(tab => (
               <button 
@@ -92,8 +92,8 @@ const App = () => {
             <div className="absolute bottom-0 right-1/4 w-64 h-64 rounded-full blur-[120px] opacity-20" style={{ backgroundColor: colors.neonPink }}></div>
             
             <div className="relative z-10 max-w-3xl">
+              <img src={logo} alt="Mullet Foot Running Club" className="w-48 md:w-64 mx-auto mb-6" />
               <h1 className="text-5xl md:text-7xl font-black mb-6 italic tracking-tighter">
-                MULLET FOOT <br/>
                 <span style={{ color: colors.neonGreen, textShadow: `0 0 20px ${colors.neonGreen}44` }}>MILES N MUGS</span>
               </h1>
               <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
