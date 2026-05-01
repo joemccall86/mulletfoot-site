@@ -22,7 +22,7 @@ const App = () => {
       location: 'Celery City Craft',
       address: '114 S Palmetto Ave, Sanford, FL',
       vibe: 'Miles n Mugs',
-      reward: 'Free drink with completed run!',
+      reward: 'One free drink with completed run!',
       icon: <Beer className="w-6 h-6" style={{ color: colors.neonGreen }} />,
       color: colors.neonGreen
     },
