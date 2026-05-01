@@ -4,7 +4,26 @@ import logoNoText from './assets/logo_no_text.svg';
 import { Calendar, MapPin, Beer, Coffee, Users, Instagram, Facebook, Twitter, CheckCircle, Dog, Baby, Footprints, ExternalLink, ChevronRight } from 'lucide-react';
 
 const App = () => {
-  const [activeTab, setActiveTab] = useState('home');
+  const [activeTab, setActiveTab] = useState(() => {
+    const hash = window.location.hash.replace('#', '');
+    return ['home', 'schedule', 'training', 'races'].includes(hash) ? hash : 'home';
+  });
+
+  useEffect(() => {
+    const onHashChange = () => {
+      const hash = window.location.hash.replace('#', '');
+      if (['home', 'schedule', 'training', 'races'].includes(hash)) {
+        setActiveTab(hash);
+      }
+    };
+    window.addEventListener('hashchange', onHashChange);
+    return () => window.removeEventListener('hashchange', onHashChange);
+  }, []);
+
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
+    window.location.hash = tab === 'home' ? '' : tab;
+  };
 
   // Theme colors based on Logo
   const colors = {
@@ -70,16 +89,16 @@ const App = () => {
               </span>
            </div>
           <div className="flex gap-4 md:gap-8 text-sm font-bold uppercase tracking-widest">
-            {['home', 'schedule', 'training', 'races'].map(tab => (
-              <button 
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className="transition-colors hover:text-white"
-                style={{ color: activeTab === tab ? colors.neonGreen : '#888' }}
-              >
-                {tab}
-              </button>
-            ))}
+             {['home', 'schedule', 'training', 'races'].map(tab => (
+               <button
+                 key={tab}
+                 onClick={() => handleTabChange(tab)}
+                 className="transition-colors hover:text-white"
+                 style={{ color: activeTab === tab ? colors.neonGreen : '#888' }}
+               >
+                 {tab}
+               </button>
+             ))}
           </div>
         </div>
       </nav>
@@ -101,10 +120,10 @@ const App = () => {
                 Party in the back, pace in the front. A community for runners, walkers, and ruckers who don't take themselves too seriously.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <button onClick={() => setActiveTab('schedule')} className="px-8 py-3 rounded-full font-bold transition-transform hover:scale-105" style={{ backgroundColor: colors.neonGreen, color: 'black' }}>
+                <button onClick={() => handleTabChange('schedule')} className="px-8 py-3 rounded-full font-bold transition-transform hover:scale-105" style={{ backgroundColor: colors.neonGreen, color: 'black' }}>
                   Join Next Run
                 </button>
-                <button onClick={() => setActiveTab('training')} className="px-8 py-3 rounded-full border-2 font-bold transition-transform hover:scale-105" style={{ borderColor: colors.neonPink, color: colors.neonPink }}>
+                <button onClick={() => handleTabChange('training')} className="px-8 py-3 rounded-full border-2 font-bold transition-transform hover:scale-105" style={{ borderColor: colors.neonPink, color: colors.neonPink }}>
                   Start 5K Plan
                 </button>
               </div>
