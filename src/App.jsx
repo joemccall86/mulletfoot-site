@@ -1,19 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import logo from './assets/logo.svg';
 import logoNoText from './assets/logo_no_text.svg';
-import { Calendar, MapPin, Beer, Coffee, Users, CheckCircle, Dog, Baby, Footprints, ExternalLink, ChevronRight } from 'lucide-react';
+import { Calendar, MapPin, Users, CheckCircle, Dog, Baby, Footprints, ExternalLink } from 'lucide-react';
 import { siInstagram, siFacebook, siX } from 'simple-icons';
+import Flyer from './components/Flyer';
+import ScheduleCard from './components/ScheduleCard';
+import { colors } from './constants/theme';
+import { schedule } from './data/schedule';
 
 const App = () => {
   const [activeTab, setActiveTab] = useState(() => {
     const hash = window.location.hash.replace('#', '');
-    return ['home', 'schedule', 'training', 'races'].includes(hash) ? hash : 'home';
+    return ['home', 'schedule', 'training', 'races', 'flyer'].includes(hash) ? hash : 'home';
   });
 
   useEffect(() => {
     const onHashChange = () => {
       const hash = window.location.hash.replace('#', '');
-      if (['home', 'schedule', 'training', 'races'].includes(hash)) {
+      if (['home', 'schedule', 'training', 'races', 'flyer'].includes(hash)) {
         setActiveTab(hash);
       }
     };
@@ -25,38 +29,6 @@ const App = () => {
     setActiveTab(tab);
     window.location.hash = tab === 'home' ? '' : tab;
   };
-
-  // Theme colors based on Logo
-  const colors = {
-    neonGreen: '#39FF14',
-    neonPink: '#FF6AD5',
-    neonBlue: '#00D4FF',
-    darkBg: '#0D0D0D',
-    cardBg: '#1A1A1A'
-  };
-
-  const schedule = [
-    {
-      day: 'Thursdays',
-      time: '6:30 PM',
-      location: 'Celery City Craft',
-      address: '114 S Palmetto Ave, Sanford, FL',
-      vibe: 'Miles n Mugs',
-      reward: 'Free drink with completed run! (limit 1)',
-      icon: <Beer className="w-6 h-6" style={{ color: colors.neonGreen }} />,
-      color: colors.neonGreen
-    },
-    {
-      day: 'Sundays',
-      time: '6:30 AM',
-      location: 'Foxtail Coffee',
-      address: '201 Sanford Ave, Sanford, FL 32771',
-      vibe: 'Morning Miles',
-      reward: 'Coffee & Community',
-      icon: <Coffee className="w-6 h-6" style={{ color: colors.neonBlue }} />,
-      color: colors.neonBlue
-    }
-  ];
 
   const races = [
     { name: "Sanford Love Your Shorts 5K", date: "Feb 15, 2024", location: "Sanford, FL" },
@@ -89,18 +61,19 @@ const App = () => {
                 Mullet <span style={{ color: colors.neonGreen }}>Foot</span>
               </span>
            </div>
-          <div className="flex gap-4 md:gap-8 text-sm font-bold uppercase tracking-widest">
-             {['home', 'schedule', 'training', 'races'].map(tab => (
-               <button
-                 key={tab}
-                 onClick={() => handleTabChange(tab)}
-                 className="transition-colors hover:text-white"
-                 style={{ color: activeTab === tab ? colors.neonGreen : '#888' }}
-               >
-                 {tab}
-               </button>
-             ))}
-          </div>
+           <div className="flex gap-4 md:gap-8 text-sm font-bold uppercase tracking-widest">
+               {['home', 'schedule', 'training', 'races'].map(tab => (
+                <button
+                  key={tab}
+                  onClick={() => handleTabChange(tab)}
+                  className="transition-colors hover:text-white"
+                  style={{ color: activeTab === tab ? colors.neonGreen : '#888' }}
+                >
+                  {tab}
+                </button>
+              ))}
+           </div>
+
         </div>
       </nav>
 
@@ -159,29 +132,29 @@ const App = () => {
           </h2>
           <div className="space-y-6">
             {schedule.map((item, i) => (
-              <div key={i} className="p-8 rounded-3xl bg-zinc-900 border-l-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-6" style={{ borderLeftColor: item.color }}>
-                <div>
-                  <div className="flex items-center gap-2 mb-2">
-                    {item.icon}
-                    <span className="font-black text-2xl uppercase tracking-tight">{item.day} @ {item.time}</span>
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-1">{item.location}</h3>
-                  <div className="flex items-center gap-1 text-gray-500 text-sm mb-4">
-                    <MapPin className="w-4 h-4" /> {item.address}
-                  </div>
-                  <div className="px-3 py-1 rounded-full bg-zinc-800 text-xs font-bold inline-block" style={{ color: item.color }}>
-                    {item.reward}
-                  </div>
-                </div>
-                 <button
-                   className="w-full md:w-auto px-6 py-3 bg-white text-black font-black rounded-xl hover:bg-gray-200 transition-colors uppercase text-sm cursor-pointer"
-                   onClick={() => window.open(`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(item.address)}`, '_blank')}
-                 >
-                   Get Directions
-                 </button>
-              </div>
+              <ScheduleCard key={i} item={item} />
             ))}
           </div>
+        </section>
+      )}
+
+      {/* Flyer Section */}
+      {activeTab === 'flyer' && (
+        <section className="flex justify-center py-8 px-4 flyer-wrapper">
+          <style>{`
+            @media screen {
+              body { background: #666; }
+              .flyer-wrapper { min-height: calc(100vh - 80px); align-items: center; }
+              .flyer { box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); }
+            }
+            @media print {
+              body { margin: 0; padding: 0; }
+              .flyer-wrapper { display: block !important; min-height: auto; }
+              .flyer { width: 4.25in; height: 5.5in; }
+              nav, footer { display: none !important; }
+            }
+          `}</style>
+          <Flyer />
         </section>
       )}
 
