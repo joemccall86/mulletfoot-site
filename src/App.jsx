@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import logo from './assets/logo.svg';
 import logoNoText from './assets/logo_no_text.svg';
-import { Calendar, MapPin, Beer, Coffee, Users, Instagram, Facebook, Twitter, CheckCircle, Dog, Baby, Footprints, ExternalLink, ChevronRight } from 'lucide-react';
+import { Calendar, MapPin, Beer, Coffee, Users, CheckCircle, Dog, Baby, Footprints, ExternalLink, ChevronRight } from 'lucide-react';
+import { siInstagram, siFacebook, siX } from 'simple-icons';
 
 const App = () => {
   const [activeTab, setActiveTab] = useState(() => {
@@ -265,14 +266,17 @@ const App = () => {
             <h3 className="text-2xl font-black italic mb-2 tracking-tight uppercase">
               Mullet <span style={{ color: colors.neonGreen }}>Foot</span>
             </h3>
-            <p className="text-gray-500 text-sm">Stay wild. Run often. Drink responsibly.</p>
+            <p className="text-gray-500 text-sm">How was your run?</p>
           </div>
           
           <div className="flex flex-col items-center md:items-end gap-4">
             <div className="flex gap-4">
-              {[Instagram, Facebook, Twitter].map((Icon, i) => (
+              {[siInstagram, siFacebook, siX].map((icon, i) => (
                 <a key={i} href="#" className="p-3 rounded-full bg-zinc-900 text-gray-400 hover:text-white hover:bg-zinc-800 transition-all">
-                  <Icon className="w-6 h-6" />
+                  <svg role="img" viewBox="0 0 24 24" className="w-6 h-6 fill-current">
+                    <title>{icon.title}</title>
+                    <path d={icon.path} />
+                  </svg>
                 </a>
               ))}
             </div>
@@ -280,7 +284,7 @@ const App = () => {
           </div>
         </div>
         <div className="text-center mt-12 text-[10px] text-gray-600 uppercase tracking-widest">
-          &copy; 2024 Mullet Foot Miles n Mugs | Sanford, FL
+          &copy; 2026 Mullet Foot | Sanford, FL
         </div>
       </footer>
     </div>
