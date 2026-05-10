@@ -31,10 +31,36 @@ const App = () => {
   };
 
   const races = [
-    { name: "Sanford Love Your Shorts 5K", date: "Feb 15, 2024", location: "Sanford, FL" },
-    { name: "Best Damn Race Orlando", date: "Mar 2, 2024", location: "Orlando, FL" },
-    { name: "Zoolu 5K / 10K", date: "Mar 23, 2024", location: "Sanford, FL" },
-    { name: "Winter Park 10k", date: "Mar 30, 2024", location: "Winter Park, FL" }
+    { 
+      name: "Hero Hustle 5K", 
+      date: "May 16, 2026", 
+      location: "DeBary, FL", 
+      url: "https://runsignup.com/Race/FL/Debary/DBK5KRunWalk" 
+    },
+    { 
+      name: "Hometown Half Marathon & 5K/10K", 
+      date: "May 23, 2026", 
+      location: "Orlando, FL", 
+      url: "https://runsignup.com/Race/FL/Orlando/HometownHalfMarathon5k10kOrlando" 
+    },
+    { 
+      name: "Doughnut Day 5K", 
+      date: "May 30, 2026", 
+      location: "Lake Mary, FL", 
+      url: "https://www.doughnutday5k.com/" 
+    },
+    { 
+      name: "AdventHealth July 4th Watermelon 5K", 
+      date: "Jul 4, 2026", 
+      location: "Winter Park, FL", 
+      url: "https://trackshack.com/events/adventhealth-july-4th-watermelon-5k/" 
+    },
+    { 
+      name: "Best Damn Race Orlando", 
+      date: "Mar 7, 2026", 
+      location: "Orlando, FL", 
+      url: "https://orlando.bestdamnrace.com/" 
+    }
   ];
 
   const c25kProgram = [
@@ -91,7 +117,7 @@ const App = () => {
                 <span style={{ color: colors.neonGreen, textShadow: `0 0 20px ${colors.neonGreen}44` }}>MILES N MUGS</span>
               </h1>
               <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-                Party in the back, pace in the front. A community for runners, walkers, and ruckers who don't take themselves too seriously.
+                Pace in the front, party in the back. A community for runners, walkers, and ruckers who don't take themselves too seriously.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <button onClick={() => handleTabChange('schedule')} className="px-8 py-3 rounded-full font-bold transition-transform hover:scale-105" style={{ backgroundColor: colors.neonGreen, color: 'black' }}>
@@ -216,7 +242,7 @@ const App = () => {
                   <div className="text-lg font-bold">{race.name}</div>
                   <div className="text-sm text-gray-500">{race.location}</div>
                 </div>
-                <ExternalLink className="w-5 h-5 text-zinc-600 cursor-pointer hover:text-white" />
+                <a href={race.url} target="_blank" rel="noopener noreferrer"><ExternalLink className="w-5 h-5 text-zinc-600 hover:text-white transition-colors" /></a>
               </div>
             ))}
           </div>
