@@ -246,15 +246,6 @@ const App = () => {
               </div>
             ))}
           </div>
-          <div className="mt-8 p-6 rounded-2xl bg-blue-900/10 border border-blue-900/30 flex items-start gap-4">
-             <div className="p-2 rounded bg-blue-500/20">
-               <MapPin className="w-5 h-5 text-blue-400" />
-             </div>
-             <div>
-               <h4 className="font-bold text-blue-300">New to racing?</h4>
-               <p className="text-sm text-blue-300/70">Join our group chat to coordinate carpools and meetup spots at these local events!</p>
-             </div>
-          </div>
         </section>
       )}
 
