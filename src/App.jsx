@@ -230,7 +230,7 @@ const App = () => {
           <div className="flex flex-col items-center md:items-end gap-4">
             <div className="flex gap-4">
               {[siInstagram, siFacebook, siX].map((icon, i) => (
-                <a key={i} href="#" className="p-3 rounded-full bg-zinc-900 text-gray-400 hover:text-white hover:bg-zinc-800 transition-all">
+                <a key={i} href={icon === siFacebook ? "https://www.facebook.com/profile.php?id=61589190376385" : "#"} className="p-3 rounded-full bg-zinc-900 text-gray-400 hover:text-white hover:bg-zinc-800 transition-all">
                   <svg role="img" viewBox="0 0 24 24" className="w-6 h-6 fill-current">
                     <title>{icon.title}</title>
                     <path d={icon.path} />
