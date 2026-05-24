@@ -7,6 +7,7 @@ import Flyer from './components/Flyer';
 import ScheduleCard from './components/ScheduleCard';
 import { colors } from './constants/theme';
 import { schedule } from './data/schedule';
+import races from './data/races.json';
 
 const App = () => {
   const [activeTab, setActiveTab] = useState(() => {
@@ -29,39 +30,6 @@ const App = () => {
     setActiveTab(tab);
     window.location.hash = tab === 'home' ? '' : tab;
   };
-
-  const races = [
-    { 
-      name: "Hero Hustle 5K", 
-      date: "May 16, 2026", 
-      location: "DeBary, FL", 
-      url: "https://runsignup.com/Race/FL/Debary/DBK5KRunWalk" 
-    },
-    { 
-      name: "Hometown Half Marathon & 5K/10K", 
-      date: "May 23, 2026", 
-      location: "Orlando, FL", 
-      url: "https://runsignup.com/Race/FL/Orlando/HometownHalfMarathon5k10kOrlando" 
-    },
-    { 
-      name: "Doughnut Day 5K", 
-      date: "May 30, 2026", 
-      location: "Lake Mary, FL", 
-      url: "https://www.doughnutday5k.com/" 
-    },
-    { 
-      name: "AdventHealth July 4th Watermelon 5K", 
-      date: "Jul 4, 2026", 
-      location: "Winter Park, FL", 
-      url: "https://trackshack.com/events/adventhealth-july-4th-watermelon-5k/" 
-    },
-    { 
-      name: "Best Damn Race Orlando", 
-      date: "Mar 7, 2026", 
-      location: "Orlando, FL", 
-      url: "https://orlando.bestdamnrace.com/" 
-    }
-  ];
 
   const c25kProgram = [
     { week: 1, mon: "Rest", tue: "Run 2 min, Walk 4 min (x5)", wed: "Rest", thu: "Run 2 min, Walk 4 min (x5)", fri: "Rest", sat: "Run 2 min, Walk 4 min (x5)", sun: "30 min Walk" },
