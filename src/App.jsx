@@ -4,6 +4,7 @@ import logoNoText from './assets/logo_no_text.svg';
 import { Calendar, MapPin, Users, CheckCircle, Dog, Baby, Footprints, ExternalLink } from 'lucide-react';
 import { siInstagram, siFacebook, siX } from 'simple-icons';
 import Flyer from './components/Flyer';
+import Photos from './components/Photos';
 import ScheduleCard from './components/ScheduleCard';
 import { colors } from './constants/theme';
 import { schedule } from './data/schedule';
@@ -12,13 +13,13 @@ import races from './data/races.json';
 const App = () => {
   const [activeTab, setActiveTab] = useState(() => {
     const hash = window.location.hash.replace('#', '');
-    return ['home', 'schedule', 'training', 'races', 'flyer'].includes(hash) ? hash : 'home';
+    return ['home', 'schedule', 'training', 'races', 'photos', 'flyer'].includes(hash) ? hash : 'home';
   });
 
   useEffect(() => {
     const onHashChange = () => {
       const hash = window.location.hash.replace('#', '');
-      if (['home', 'schedule', 'training', 'races', 'flyer'].includes(hash)) {
+      if (['home', 'schedule', 'training', 'races', 'photos', 'flyer'].includes(hash)) {
         setActiveTab(hash);
       }
     };
@@ -56,7 +57,7 @@ const App = () => {
               </span>
            </div>
            <div className="flex gap-4 md:gap-8 text-sm font-bold uppercase tracking-widest">
-               {['home', 'schedule', 'training', 'races'].map(tab => (
+                {['home', 'schedule', 'training', 'races', 'photos'].map(tab => (
                 <button
                   key={tab}
                   onClick={() => handleTabChange(tab)}
@@ -216,6 +217,9 @@ const App = () => {
           </div>
         </section>
       )}
+
+      {/* Photos Section */}
+      {activeTab === 'photos' && <Photos />}
 
       {/* Footer / Socials */}
       <footer className="mt-20 py-12 border-t border-zinc-800 px-4">
