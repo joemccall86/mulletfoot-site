@@ -130,6 +130,13 @@ const App = () => {
               <ScheduleCard key={i} item={item} />
             ))}
           </div>
+
+          <h2 className="text-3xl font-black mb-12 mt-16 uppercase tracking-tighter flex items-center gap-3">
+            <Calendar style={{ color: colors.neonBlue }} /> Special Events
+          </h2>
+          <div className="p-8 rounded-3xl bg-zinc-900 border-l-4 text-center" style={{ borderLeftColor: colors.neonBlue }}>
+            <p className="text-gray-500 text-sm uppercase tracking-widest">Coming Soon</p>
+          </div>
         </section>
       )}
 
