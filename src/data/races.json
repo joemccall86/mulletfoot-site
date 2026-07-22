@@ -1,23 +1,5 @@
 [
   {
-    "name": "AdventHealth July 4th Watermelon 5K",
-    "date": "Jul 4, 2026",
-    "location": "Orlando, FL",
-    "url": "https://trackshack.com/events/adventhealth-july-4th-watermelon-5k/"
-  },
-  {
-    "name": "Freedom 5K",
-    "date": "Jul 4, 2026",
-    "location": "Clermont, FL",
-    "url": "https://runsignup.com/Race/FL/Clermont/ClermontFreedom5kand1mile"
-  },
-  {
-    "name": "Eagle 5K, 10K, & 13.1M",
-    "date": "Jul 18, 2026",
-    "location": "DeBary, FL",
-    "url": "https://runsignup.com/Race/FL/DeBary/Gemini71925"
-  },
-  {
     "name": "Celebration of Running 5K",
     "date": "Aug 15, 2026",
     "location": "Orlando, FL",
@@ -34,5 +16,11 @@
     "date": "Aug 22, 2026",
     "location": "Orlando, FL",
     "url": "https://runsignup.com/Race/FL/Orlando/1stAnnualPrideofthePatriots5K"
+  },
+  {
+    "name": "Freeway 5K Run For Recovery",
+    "date": "Sep 12, 2026",
+    "location": "Sanford, FL",
+    "url": "https://runsignup.com/Race/FL/Sanford/Freeway5KRunForRecovery"
   }
 ]
