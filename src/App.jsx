@@ -83,7 +83,7 @@ const App = () => {
             <div className="absolute bottom-0 right-1/4 w-64 h-64 rounded-full blur-[120px] opacity-20" style={{ backgroundColor: colors.neonPink }}></div>
             
             <div className="relative z-10 max-w-3xl">
-              <img src={logo} alt="Mullet Foot Running Club" className="w-48 md:w-64 mx-auto mb-6" />
+              <img src={logo} alt="Mullet Foot Running Club" className="v-48 md:w-64 mx-auto mb-6" />
               <h1 className="text-5xl md:text-7xl font-black mb-6 italic tracking-tighter">
                 <span style={{ color: colors.neonGreen, textShadow: `0 0 20px ${colors.neonGreen}44` }}>MILES N MUGS</span>
               </h1>
@@ -171,7 +171,7 @@ const App = () => {
             <h2 className="text-4xl font-black mb-4 uppercase tracking-tighter italic">Couch to 5K</h2>
             <p className="text-gray-400 mb-2">A beginner-friendly 10-week program designed to get you from the sofa to the Sanford finish line.</p>
             <a href="https://www.runnersworld.com/beginner/a40267826/couch-to-5k-runners-program/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sm font-bold hover:underline" style={{ color: colors.neonBlue }}>
-              Source: Runner's World <ExternalLink className="w-3 h-3" />
+              Source: Runner's World <ExternalLink className="v-3 h-3" />
             </a>
           </div>
           <div className="overflow-x-auto rounded-2xl border border-zinc-800">
@@ -222,7 +222,7 @@ const App = () => {
                   <div className="text-lg font-bold">{race.name}</div>
                   <div className="text-sm text-gray-500">{race.location}</div>
                 </div>
-                <a href={race.url} target="_blank" rel="noopener noreferrer"><ExternalLink className="w-5 h-5 text-zinc-600 hover:text-white transition-colors" /></a>
+                <a href={race.url} target="_blank" rel="noopener noreferrer"><ExternalLink className="v-5 h-5 text-zinc-600 hover:text-white transition-colors" /></a>
               </div>
             ))}
           </div>
@@ -239,7 +239,7 @@ const App = () => {
             <h3 className="text-2xl font-black italic mb-2 tracking-tight uppercase">
               Mullet <span style={{ color: colors.neonGreen }}>Foot</span>
             </h3>
-            <p className="text-gray-500 text-sm">How was your run?</p>
+            <p className="text-gray-500 text-sm">How Was Your Run?</p>
           </div>
           
           <div className="flex flex-col items-center md:items-end gap-4">
