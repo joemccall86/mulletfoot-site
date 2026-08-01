@@ -239,7 +239,7 @@ const App = () => {
             <h3 className="text-2xl font-black italic mb-2 tracking-tight uppercase">
               Mullet <span style={{ color: colors.neonGreen }}>Foot</span>
             </h3>
-            <p className="text-gray-500 text-sm">How was your run?</p>
+            <p className="text-gray-500 text-sm">I am running!</p>
           </div>
           
           <div className="flex flex-col items-center md:items-end gap-4">
