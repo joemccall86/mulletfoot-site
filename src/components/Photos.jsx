@@ -28,10 +28,12 @@ import sun10 from '../assets/Sunday/744869996_122114054529306345_524859413472157
 import sun11 from '../assets/Sunday/746715774_122114054289306345_1552510030415718713_n.jpg';
 import sun12 from '../assets/Sunday/748873876_122114954319306345_1298212331692921541_n.jpg';
 import sun13 from '../assets/Sunday/752198959_122115046803306345_5480040920490215235_n.jpg';
+import sun14 from '../assets/Sunday/PXL_20260802_103508761.jpg';
+import sun15 from '../assets/Sunday/IMG_20260802_060613_781.jpg';
 
 const albums = {
   Thursday: [thu0, thu1, thu2, thu3, thu4, thu5, thu6, thu7, thu8, thu9, thu10].map((img) => ({ original: img, thumbnail: img })),
-  Sunday: [sun0, sun1, sun2, sun3, sun4, sun5, sun6, sun7, sun8, sun9, sun10, sun11, sun12, sun13].map((img) => ({ original: img, thumbnail: img })),
+  Sunday: [sun0, sun1, sun2, sun3, sun4, sun5, sun6, sun7, sun8, sun9, sun10, sun11, sun12, sun13, sun14, sun15].map((img) => ({ original: img, thumbnail: img })),
 };
 
 const Photos = () => {
