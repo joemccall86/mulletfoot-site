@@ -40,5 +40,13 @@
     "date": "Nov 1, 2026",
     "location": "Lake Mary, FL",
     "url": "https://www.UnitedwiththeBlue5k.com"
+  },
+  {
+    "name": "Mount Dora Half Marathon & 5K",
+    "date": "Dec 19-20, 2026",
+    "location": "Mount Dora, FL",
+    "url": "https://www.mountdorahalfmarathon.com/",
+    "code": "A26KC",
+    "discount": "10% off"
   }
 ]

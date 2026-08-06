@@ -217,10 +217,17 @@ const App = () => {
           <div className="bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800">
             {races.map((race, i) => (
               <div key={i} className="p-6 border-b border-zinc-800 last:border-0 flex justify-between items-center hover:bg-zinc-800/30 transition-colors">
-                <div>
+                <div className="flex-1">
                   <div className="text-xs font-black mb-1 uppercase tracking-widest" style={{ color: colors.neonPink }}>{race.date}</div>
                   <div className="text-lg font-bold">{race.name}</div>
                   <div className="text-sm text-gray-500">{race.location}</div>
+                  {race.code && (
+                    <div className="text-xs mt-2 px-2 py-1 bg-zinc-800 rounded w-fit">
+                      <span className="text-gray-400">Code: </span>
+                      <span className="font-bold" style={{ color: colors.neonGreen }}>{race.code}</span>
+                      <span className="text-gray-400 ml-2">{race.discount}</span>
+                    </div>
+                  )}
                 </div>
                 <a href={race.url} target="_blank" rel="noopener noreferrer"><ExternalLink className="v-5 h-5 text-zinc-600 hover:text-white transition-colors" /></a>
               </div>
