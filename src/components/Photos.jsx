@@ -55,9 +55,16 @@ import sun20 from '../assets/Sunday/sunday-chalk-go.jpg';
 import sun21 from '../assets/Sunday/sunday-sunset-waterfront.jpg';
 import sun22 from '../assets/Sunday/sunday-sunset-horizon.jpg';
 
+import sun23 from '../assets/Sunday/img_288e5c8ed778.jpeg';
+import sun24 from '../assets/Sunday/img_2ff2fa0d57e3.jpeg';
+import sun25 from '../assets/Sunday/img_a9ee0d07ea41.jpeg';
+import sun26 from '../assets/Sunday/img_b395adf5efc7.jpeg';
+import sun27 from '../assets/Sunday/img_dfc0d9997df0.jpeg';
+import sun28 from '../assets/Sunday/img_f8bb540b4e09.jpeg';
+
 const albums = {
   Thursday: [thu0, thu1, thu2, thu3, thu4, thu5, thu6, thu7, thu8, thu9, thu10, thu11, thu12, thu13, thu14, thu15, thu16, thu17, thu18, thu19, thu20].map((img) => ({ original: img, thumbnail: img })),
-  Sunday: [sun0, sun1, sun2, sun3, sun4, sun5, sun6, sun7, sun8, sun9, sun10, sun11, sun12, sun13, sun14, sun15, sun16, sun17, sun18, sun19, sun20, sun21, sun22].map((img) => ({ original: img, thumbnail: img })),
+  Sunday: [sun0, sun1, sun2, sun3, sun4, sun5, sun6, sun7, sun8, sun9, sun10, sun11, sun12, sun13, sun14, sun15, sun16, sun17, sun18, sun19, sun20, sun21, sun22, sun23, sun24, sun25, sun26, sun27, sun28].map((img) => ({ original: img, thumbnail: img })),
   "80's": [eighty0, eighty1, eighty2, eighty3, eighty4, eighty5].map((img) => ({ original: img, thumbnail: img })),
 };
 
