@@ -11,8 +11,8 @@ export const schedule = [
   {
     day: 'Sundays',
     time: '6:30 AM',
-    location: 'Foxtail Coffee',
-    address: '201 Sanford Ave, Sanford, FL 32771',
+    location: 'Colonial Room Sanford',
+    address: '105 E 1st St, Sanford, FL 32771',
     vibe: 'Morning Miles',
     reward: 'Coffee & Community',
     type: 'blue'
