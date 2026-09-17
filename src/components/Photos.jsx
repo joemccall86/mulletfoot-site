@@ -18,12 +18,9 @@ import thu12 from '../assets/Thursday/img_1ff54370d429.jpeg';
 import thu13 from '../assets/Thursday/img_fb10ff124f1a.jpeg';
 import thu14 from '../assets/Thursday/img_65fc9a14a21c.jpeg';
 
-import eighty0 from '../assets/80s/img_f8bb540b4e09.jpeg';
-import eighty1 from '../assets/80s/img_b395adf5efc7.jpeg';
-import eighty2 from '../assets/80s/img_288e5c8ed778.jpeg';
-import eighty3 from '../assets/80s/img_a9ee0d07ea41.jpeg';
-import eighty4 from '../assets/80s/img_2ff2fa0d57e3.jpeg';
-import eighty5 from '../assets/80s/img_dfc0d9997df0.jpeg';
+import eighty0 from '../assets/80s/img_288e5c8ed778.jpeg';
+import eighty1 from '../assets/80s/img_2ff2fa0d57e3.jpeg';
+import eighty2 from '../assets/80s/img_a9ee0d07ea41.jpeg';
 
 import sun0 from '../assets/Sunday/mullet-foot-1.jpg';
 import sun1 from '../assets/Sunday/mullet-foot-2.jpg';
@@ -69,7 +66,7 @@ import sf6 from '../assets/SundayFunday/img_d05aaa492cbf.jpeg';
 const albums = {
   Thursday: [thu0, thu1, thu2, thu3, thu4, thu5, thu6, thu7, thu8, thu9, thu10, thu11, thu12, thu13, thu14].map((img) => ({ original: img, thumbnail: img })),
   Sunday: [sun0, sun1, sun2, sun3, sun4, sun5, sun6, sun7, sun8, sun9, sun10, sun11, sun12, sun13, sun14, sun15, sun16, sun17, sun18, sun19, sun20, sun21, sun22, sun29, sun30, sun31, sun32, sun33, sun34, sun35, sun36].map((img) => ({ original: img, thumbnail: img })),
-  "80's": [eighty0, eighty1, eighty2, eighty3, eighty4, eighty5].map((img) => ({ original: img, thumbnail: img })),
+  "80's": [eighty0, eighty1, eighty2].map((img) => ({ original: img, thumbnail: img })),
   "Sunday Funday": [sf0, sf1, sf2, sf3, sf4, sf5, sf6].map((img) => ({ original: img, thumbnail: img })),
 };
 
