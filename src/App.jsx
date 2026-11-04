@@ -85,7 +85,7 @@ const App = () => {
             <div className="relative z-10 max-w-3xl">
               <img src={logo} alt="Mullet Foot Running Club" className="v-48 md:w-64 mx-auto mb-6" />
               <h1 className="text-5xl md:text-7xl font-black mb-6 italic tracking-tighter">
-                <span style={{ color: colors.neonGreen, textShadow: `0 0 20px ${colors.neonGreen}44` }}>MILES N MUGS</span>
+                <span style={{ color: colors.neonGreen, textShadow: `0 0 20px ${colors.neonGreen}44` }}>RUN CLUB</span>
               </h1>
               <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
                 Pace in the front, party in the back. A community for runners, walkers, and ruckers who don't take themselves too seriously.
