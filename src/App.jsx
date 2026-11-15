@@ -5,6 +5,7 @@ import { Calendar, MapPin, Users, CheckCircle, Dog, Baby, Footprints, ExternalLi
 import { siInstagram, siFacebook, siX } from 'simple-icons';
 import Flyer from './components/Flyer';
 import Photos from './components/Photos';
+import HolidayHustle from './components/HolidayHustle';
 import ScheduleCard from './components/ScheduleCard';
 import { colors } from './constants/theme';
 import { schedule } from './data/schedule';
@@ -13,13 +14,13 @@ import races from './data/races.json';
 const App = () => {
   const [activeTab, setActiveTab] = useState(() => {
     const hash = window.location.hash.replace('#', '');
-    return ['home', 'schedule', 'training', 'races', 'photos', 'flyer'].includes(hash) ? hash : 'home';
+    return ['home', 'schedule', 'training', 'races', 'photos', 'flyer', 'hustle'].includes(hash) ? hash : 'home';
   });
 
   useEffect(() => {
     const onHashChange = () => {
       const hash = window.location.hash.replace('#', '');
-      if (['home', 'schedule', 'training', 'races', 'photos', 'flyer'].includes(hash)) {
+      if (['home', 'schedule', 'training', 'races', 'photos', 'flyer', 'hustle'].includes(hash)) {
         setActiveTab(hash);
       }
     };
@@ -57,7 +58,7 @@ const App = () => {
               </span>
            </div>
            <div className="flex gap-4 md:gap-8 text-sm font-bold uppercase tracking-widest">
-                {['home', 'schedule', 'training', 'races', 'photos'].map(tab => (
+                {['home', 'schedule', 'training', 'races', 'photos', 'hustle'].map(tab => (
                 <button
                   key={tab}
                   onClick={() => handleTabChange(tab)}
@@ -94,6 +95,9 @@ const App = () => {
                 </button>
                 <button onClick={() => handleTabChange('training')} className="px-8 py-3 rounded-full border-2 font-bold transition-transform hover:scale-105" style={{ borderColor: colors.neonPink, color: colors.neonPink }}>
                   Start 5K Plan
+                </button>
+                <button onClick={() => handleTabChange('hustle')} className="px-8 py-3 rounded-full border-2 font-bold transition-transform hover:scale-105" style={{ borderColor: colors.neonBlue, color: colors.neonBlue }}>
+                  Holiday Hustle
                 </button>
               </div>
             </div>
@@ -228,6 +232,9 @@ const App = () => {
 
       {/* Photos Section */}
       {activeTab === 'photos' && <Photos />}
+
+      {/* Holiday Hustle Section */}
+      {activeTab === 'hustle' && <HolidayHustle />}
 
       {/* Footer / Socials */}
       <footer className="mt-20 py-12 border-t border-zinc-800 px-4">
