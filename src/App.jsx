@@ -8,8 +8,6 @@ import Photos from './components/Photos';
 import ScheduleCard from './components/ScheduleCard';
 import { colors } from './constants/theme';
 import { schedule } from './data/schedule';
-import { events } from './data/events';
-import EventCard from './components/EventCard';
 import races from './data/races.json';
 
 const App = () => {
@@ -133,14 +131,6 @@ const App = () => {
             ))}
           </div>
 
-          <h2 className="text-3xl font-black mb-12 mt-16 uppercase tracking-tighter flex items-center gap-3">
-            <Calendar style={{ color: colors.neonPink }} /> Special Events
-          </h2>
-          <div className="space-y-6">
-            {events.map((event, i) => (
-              <EventCard key={i} event={event} />
-            ))}
-          </div>
         </section>
       )}
 
