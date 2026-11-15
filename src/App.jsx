@@ -65,7 +65,7 @@ const App = () => {
                   className="transition-colors hover:text-white"
                   style={{ color: activeTab === tab ? colors.neonGreen : '#888' }}
                 >
-                  {tab}
+                  {tab === 'hustle' ? '🎄 hustle 🎄' : tab}
                 </button>
               ))}
            </div>
