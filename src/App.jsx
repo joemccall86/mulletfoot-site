@@ -8,6 +8,7 @@ import Photos from './components/Photos';
 import HolidayHustle from './components/HolidayHustle';
 import ScheduleCard from './components/ScheduleCard';
 import { colors } from './constants/theme';
+import { trackPageView } from './lib/analytics';
 import { schedule } from './data/schedule';
 import races from './data/races.json';
 
@@ -27,6 +28,10 @@ const App = () => {
     window.addEventListener('hashchange', onHashChange);
     return () => window.removeEventListener('hashchange', onHashChange);
   }, []);
+
+  useEffect(() => {
+    trackPageView(activeTab);
+  }, [activeTab]);
 
   const handleTabChange = (tab) => {
     setActiveTab(tab);
