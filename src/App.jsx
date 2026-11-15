@@ -61,6 +61,7 @@ const App = () => {
                 {['home', 'schedule', 'training', 'races', 'photos', 'hustle'].map(tab => (
                 <button
                   key={tab}
+                  hidden={tab === 'hustle'}
                   onClick={() => handleTabChange(tab)}
                   className="transition-colors hover:text-white"
                   style={{ color: activeTab === tab ? colors.neonGreen : '#888' }}
@@ -96,7 +97,7 @@ const App = () => {
                 <button onClick={() => handleTabChange('training')} className="px-8 py-3 rounded-full border-2 font-bold transition-transform hover:scale-105" style={{ borderColor: colors.neonPink, color: colors.neonPink }}>
                   Start 5K Plan
                 </button>
-                <button onClick={() => handleTabChange('hustle')} className="px-8 py-3 rounded-full border-2 font-bold transition-transform hover:scale-105" style={{ borderColor: colors.neonBlue, color: colors.neonBlue }}>
+                <button hidden onClick={() => handleTabChange('hustle')} className="px-8 py-3 rounded-full border-2 font-bold transition-transform hover:scale-105" style={{ borderColor: colors.neonBlue, color: colors.neonBlue }}>
                   Holiday Hustle
                 </button>
               </div>
