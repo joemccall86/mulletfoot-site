@@ -20,6 +20,24 @@ const steps = [
   },
 ];
 
+const thingsToKnow = [
+  {
+    title: "3 Points Max Per Day",
+    desc: "Points are capped at 3 per person, per day — one point for every 30 minutes of activity.",
+    color: colors.neonGreen,
+  },
+  {
+    title: "Not on the Team List?",
+    desc: 'No problem. In the Google Form, select "Other" and type in your team\'s name to log your points for your team.',
+    color: colors.neonPink,
+  },
+  {
+    title: "Flying Solo?",
+    desc: 'You don\'t need a team to join the Hustle. Select "Individual" in the Google Form to log your points as an individual.',
+    color: colors.neonBlue,
+  },
+];
+
 const HolidayHustle = () => (
   <section className="max-w-4xl mx-auto px-4 py-16">
     <div className="mb-12">
@@ -67,6 +85,28 @@ const HolidayHustle = () => (
           <p className="text-gray-500 text-sm leading-relaxed">{step.desc}</p>
         </div>
       ))}
+    </div>
+
+    <div className="mb-12">
+      <h3 className="text-2xl font-black uppercase italic tracking-tighter mb-6">
+        Things to Know
+      </h3>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {thingsToKnow.map((item) => (
+          <div
+            key={item.title}
+            className="p-6 rounded-2xl bg-zinc-900 border border-zinc-800"
+          >
+            <h4
+              className="text-sm font-black uppercase tracking-widest mb-2"
+              style={{ color: item.color }}
+            >
+              {item.title}
+            </h4>
+            <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
     </div>
 
     <div className="p-8 rounded-3xl bg-zinc-900 border border-zinc-800 text-center">
