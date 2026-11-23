@@ -47,8 +47,8 @@ const HolidayHustle = () => (
       The Sanford Holiday Hustle is a city-wide fitness coalition bringing
       together gyms, run clubs, fitness clubs, studios, and individuals for one
       massive, combined cause: supporting local families in need through Ladies
-      327 Inc. Instead of a financial donation, we're asking for your sweat
-      equity and your community's incredible energy.
+      327 Inc. Instead of a financial donation, we're asking for our sweat
+      equity and our community's incredible energy.
     </p>
 
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
